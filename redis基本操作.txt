@@ -1,0 +1,32 @@
+启动
+redis-server 配置文件     
+哨兵启动
+redis-server 配置文件 --sentinel
+
+
+主从+密码 需要注意点：主从都要设置
+requirepass "3Dxt@Sfy123~"
+masterauth "3Dxt@Sfy123~"
+另外从机要设置
+slaveof 10.71.3.180 6379
+
+
+sentinel配置  bind 绑定后程序连接失败。
+#sentinel端口
+port 26379
+dir "D:\\software\\worksoft\\redis64-3.0.501"
+# 守护进程模式
+daemonize yes
+# 指明日志文件名
+logfile "./sentinel6379.log"
+
+#protected-mode no
+#哨兵绑定的IP
+#bind 127.0.0.1
+#主机ip 端口 2表示两个哨兵发现主机挂掉，启动主从切换。
+#mymaster 这里的mymaster为redis主机别名，不同的redis主机需要不同别名
+#主机和从机的定义必需一致。
+sentinel monitor mymaster 10.71.3.180 6779 2
+sentinel down-after-milliseconds mymaster 3000
+sentinel auth-pass mymaster 3Dxt@Sfy123~
+
