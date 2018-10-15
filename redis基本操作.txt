@@ -1,4 +1,4 @@
---、、、启动
+--、、、启动忐忑忐忑
 redis-server 配置文件     
 哨兵启动
 redis-server 配置文件 --sentinel
