@@ -1,32 +1,34 @@
---¡¢¡¢¡¢Æô¶¯
-redis-server ÅäÖÃÎÄ¼ş     
-ÉÚ±øÆô¶¯
-redis-server ÅäÖÃÎÄ¼ş --sentinel
+å¯åŠ¨
+redis-server é…ç½®æ–‡ä»¶     
+å“¨å…µå¯åŠ¨
+redis-server é…ç½®æ–‡ä»¶ --sentinel
 
 
-Ö÷´Ó+ÃÜÂë ĞèÒª×¢Òâµã£ºÖ÷´Ó¶¼ÒªÉèÖÃ
+ä¸»ä»+å¯†ç  éœ€è¦æ³¨æ„ç‚¹ï¼šä¸»ä»éƒ½è¦è®¾ç½®
 requirepass "3Dxt@Sfy123~"
 masterauth "3Dxt@Sfy123~"
-ÁíÍâ´Ó»úÒªÉèÖÃ
+å¦å¤–ä»æœºè¦è®¾ç½®
 slaveof 10.71.3.180 6379
 
 
-sentinelÅäÖÃ  bind °ó¶¨ºó³ÌĞòÁ¬½ÓÊ§°Ü¡£
-#sentinel¶Ë¿Ú
+sentinelé…ç½®  bind ç»‘å®šåç¨‹åºè¿æ¥å¤±è´¥ã€‚
+#sentinelç«¯å£
 port 26379
 dir "D:\\software\\worksoft\\redis64-3.0.501"
-# ÊØ»¤½ø³ÌÄ£Ê½
+# å®ˆæŠ¤è¿›ç¨‹æ¨¡å¼
 daemonize yes
-# Ö¸Ã÷ÈÕÖ¾ÎÄ¼şÃû
+# æŒ‡æ˜æ—¥å¿—æ–‡ä»¶å
 logfile "./sentinel6379.log"
 
 #protected-mode no
-#ÉÚ±ø°ó¶¨µÄIP
+#å“¨å…µç»‘å®šçš„IP
 #bind 127.0.0.1
-#Ö÷»úip ¶Ë¿Ú 2±íÊ¾Á½¸öÉÚ±ø·¢ÏÖÖ÷»ú¹Òµô£¬Æô¶¯Ö÷´ÓÇĞ»»¡£
-#mymaster ÕâÀïµÄmymasterÎªredisÖ÷»ú±ğÃû£¬²»Í¬µÄredisÖ÷»úĞèÒª²»Í¬±ğÃû
-#Ö÷»úºÍ´Ó»úµÄ¶¨Òå±ØĞèÒ»ÖÂ¡£
+#ä¸»æœºip ç«¯å£ 2è¡¨ç¤ºä¸¤ä¸ªå“¨å…µå‘ç°ä¸»æœºæŒ‚æ‰ï¼Œå¯åŠ¨ä¸»ä»åˆ‡æ¢ã€‚
+#mymaster è¿™é‡Œçš„mymasterä¸ºredisä¸»æœºåˆ«åï¼Œä¸åŒçš„redisä¸»æœºéœ€è¦ä¸åŒåˆ«å
+#ä¸»æœºå’Œä»æœºçš„å®šä¹‰å¿…éœ€ä¸€è‡´ã€‚
 sentinel monitor mymaster 10.71.3.180 6779 2
 sentinel down-after-milliseconds mymaster 3000
 sentinel auth-pass mymaster 3Dxt@Sfy123~
+
+##æ—ºæ—ºå¤§ç¤¼åŒ…
 
